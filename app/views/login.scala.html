@@ -1,0 +1,64 @@
+@(message:String, errorCode: Int, loginForm: Form[User])
+
+
+@main(message) {
+<div id="header">@navbar("login")</div>
+
+<div id="body">
+	    	
+				
+				
+      			<form id="loginForm" class="span4 form-horizontal" action='@routes.UserManager.authenticate' method="POST">
+				  <fieldset>
+				  	<div id="legend">
+				      	<legend class="">@Messages("login.title")</legend>
+				    </div>
+				    
+				    
+				    <div class="control-group">
+				    <!-- Error management -->
+				    @errorCode match {
+			    	  case 0 => {
+						  <div class="alert alert-success">
+						    <strong>Yes! </strong>@Messages("login.created")
+						  </div>
+					  }
+					 
+					  case 1 => {
+						  <div class="alert alert-error">
+						    <strong>Oups! </strong>@Messages("login.error.exist")
+						  </div>
+					  }
+					  
+					  case _ => {}
+					}
+				      <!-- Username -->
+				      <label class="control-label"  for="login">@Messages("login.login")</label>
+				      <div class="controls">
+				        <input type="text" id="login" name="login" placeholder="" value="" class="input-xlarge">
+				      </div>
+				    </div>
+				 
+				    <div class="control-group">
+				      <!-- Password-->
+				      <label class="control-label" for="password">@Messages("login.password")</label>
+				      <div class="controls">
+				        <input type="password" id="password" name="password" placeholder="" class="input-xlarge" value="">
+				      </div>
+				    </div>
+			
+				    <div class="control-group">
+				      <!-- Button -->
+				      <div class="controls">
+				        <!--<button class="btn btn-success">@Messages("login.connect")</button> -->
+				        <button class="btn btn-primary">@Messages("login.create")</button>
+				      </div>
+				    </div>
+				  </fieldset>
+				</form>
+				
+    </div>	
+	
+		
+}
+

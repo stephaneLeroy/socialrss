@@ -1,0 +1,19 @@
+#Home page
+home.title = Bienvenue sur RSSReader
+
+
+#Navigation bar
+navbar.site = Social RSS 1.0
+navbar.home = Accueil
+navbar.feeds = Flux
+navbar.messages = Messages
+navbar.top = Top Flux
+
+#Login page
+login.title = Connexion
+login.connect = Se Connecter
+login.create = Créer un compte
+login.login = Identifiant
+login.password = Mot de passe
+login.error.exist = Cet identifiant existe déjà! Il faut en choisir un autre...
+login.created = La compte à bien été créé!

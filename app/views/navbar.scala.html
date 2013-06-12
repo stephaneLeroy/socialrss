@@ -1,0 +1,52 @@
+@(page:String)
+
+<div class="navbar">
+	<div class="navbar-outer" style="-webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0;">
+		<div class="container-fluid">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+			<a class="brand" href="#" name="top">@Messages("navbar.site")</a>
+			<div class="nav-collapse collapse">
+
+				<ul class="nav nav-pills">
+				@page match {
+					case "login" => {
+						<li><a href="@routes.Application.index"><i class="icon-home icon-white"></i> @Messages("navbar.home")</a></li>
+						<li class="divider-vertical"></li>
+						<li><a href="#feeds"><i class="icon-file icon-white"></i> @Messages("navbar.feeds")</a></li>
+						<li class="divider-vertical"></li>
+	                  	<li><a href="#top"><i class="icon-signal icon-white"></i> @Messages("navbar.top")</a></li>
+						<li class="divider-vertical"></li>
+						<li class="active"><a href="@routes.UserManager.login"><i class="icon-lock icon-white"></i> @Messages("login.connect")</a></li>
+					}
+					case "index" => {
+						<li class="active"><a href="@routes.Application.index"><i class="icon-home icon-white"></i> @Messages("navbar.home")</a></li>
+						<li class="divider-vertical"></li>
+						<li><a href="#feeds"><i class="icon-file icon-white"></i> @Messages("navbar.feeds")</a></li>
+						<li class="divider-vertical"></li>
+	                  	<li><a href="#top"><i class="icon-signal icon-white"></i> @Messages("navbar.top")</a></li>
+						<li class="divider-vertical"></li>
+						<li><a href="@routes.UserManager.login"><i class="icon-lock icon-white"></i> @Messages("login.connect")</a></li>
+					}
+					case "_" => {
+						<li><a href="@routes.Application.index"><i class="icon-home icon-white"></i> @Messages("navbar.home")</a></li>
+						<li class="divider-vertical"></li>
+						<li><a href="#feeds"><i class="icon-file icon-white"></i> @Messages("navbar.feeds")</a></li>
+						<li class="divider-vertical"></li>
+	                  	<li><a href="#top"><i class="icon-signal icon-white"></i> @Messages("navbar.top")</a></li>
+						<li class="divider-vertical"></li>
+						<li><a href="@routes.UserManager.login"><i class="icon-lock icon-white"></i> @Messages("login.connect")</a></li>
+					}
+				}
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+		<!--/.container-fluid -->
+	</div>
+	<!--/.navbar-inner -->
+</div>
+<!--/.navbar -->
